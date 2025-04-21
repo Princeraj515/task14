@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+	<style>
+    body{background-color:yellow;}
+    h1{
+      color:blue;
+    }
+  </style>
+</head>
+<body>
+  
+  <h3>JavaScript: Conditional,Loops,Functions <br>
+1. Write a function that filters out negative numbers.<br>
+
+2. Write a JavaScript function to get the difference between a given number and 13, if the number is greater than 13 return double the absolute difference.<br>
+
+3. Write a function of Fibonacci series using JavaScript <br>
+
+4. Write a JavaScript program to sum the multiples of 3 and 5 under 1000 using function.<br>
+
+5. Write a program to return cube of a number using function object.</h3> <br>
+    <script>
+      
+      // Question 1
+        function NegativeNumbers(arr) {
+  return arr.filter(num => num >= 0);
+}
+const numbers = [2, -6, 5, 8, -6, 7];
+const positiveNumbers = NegativeNumbers(numbers);
+document.writeln("<br>1.)",positiveNumbers); 
+
+
+// Question 2
+
+function difference(num) {
+  if (num > 13) {
+    return 2 * Math.abs(num - 13);
+  } else {
+    return 13 - num;
+  }
+}
+document.writeln("<br>2.)",difference(10));  
+document.writeln("<br>2.)",difference(20));
+
+// question 3
+function fibonacciSeries(n) {
+  const series = [];
+  let a = 0, b = 1;
+
+  for (let i = 0; i < n; i++) {
+    series.push(a);
+    [a, b] = [b, a + b]; 
+  }
+
+  return series;
+}
+
+
+document.writeln("<br>3.)",fibonacciSeries(10));
+
+
+
+//Question 4
+function sumMultiplesOf3And5(limit) {
+    let sum = 0;
+    for (let i = 0; i < limit; i++) {
+      if (i % 3 === 0 || i % 5 === 0) {
+        sum += i;
+      }
+    }
+    return sum;
+  }
+  
+
+  const result = sumMultiplesOf3And5(1000);
+  document.writeln("<br> 4.)Sum of multiples of 3 and 5 under 1000 is:", result);
+  
+
+//Question 5
+
+const cube = new Function("num", "return num * num * num;");
+
+document.writeln("<br>5.)",cube(2));  
+document.writeln("<br>5.)",cube(3));  
+document.writeln("<br>5.)",cube(5));  
+
+
+       
+    </script>
+</body>
+</html>
+
+
+
